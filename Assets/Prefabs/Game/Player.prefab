@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation: {fileID: 6592358066179332491}
   _rb: {fileID: 188939439152749619}
-  _speed: 5
+  _speed: 3
 --- !u!114 &6844045263715012743
 MonoBehaviour:
   m_ObjectHideFlags: 0
