@@ -1,7 +1,14 @@
-﻿namespace TDS.Infrastructure
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace TDS.Infrastructure
 {
-    public class Bootstrapper
+    public class Bootstrapper : MonoBehaviour
     {
-        
+        private void Start()
+        {
+            SceneManager.LoadScene("GameScene");
+        }
     }
 }
