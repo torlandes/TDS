@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NeedOpenSceneOnStart: 1
   StartScene:
-    Name: GameScene
-    Index: 1
-    Path: Assets/Scenes/GameScene.unity
-    GuidHex: 8c9cfa26abfee488c85f1582747f6a02
-  NeedOpenSceneOnStop: 1
-  StopScene:
     Name: BootstrapScene
     Index: 0
     Path: Assets/Scenes/BootstrapScene.unity
     GuidHex: e0ad4066d1897ab4f9aec25dbbaf12f3
+  NeedOpenSceneOnStop: 1
+  StopScene:
+    Name: GameScene
+    Index: 1
+    Path: Assets/Scenes/GameScene.unity
+    GuidHex: 8c9cfa26abfee488c85f1582747f6a02
   AllScenes:
   - Name: BootstrapScene
     Index: 0
