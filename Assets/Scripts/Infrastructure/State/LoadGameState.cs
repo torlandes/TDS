@@ -1,7 +1,5 @@
 ﻿using TDS.Infrastructure.Locator;
 using TDS.Service.SceneLoading;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TDS.Infrastructure.State
 {
@@ -11,17 +9,13 @@ namespace TDS.Infrastructure.State
 
         public override void Enter()
         {
-            Debug.Log("LoadGameState Enter");
-            
-            SceneLoaderService sceneLoaderService = ServicesLocator.Instance.Get<SceneLoaderService>(); 
+            SceneLoaderService sceneLoaderService = ServicesLocator.Instance.Get<SceneLoaderService>();
             sceneLoaderService.Load(SceneName.Game);
-            
+
             StateMachine.Enter<GameState>();
         }
 
-        public override void Exit()
-        {
-        }
+        public override void Exit() { }
 
         #endregion
     }
