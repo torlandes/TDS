@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af0024c8210d1e41b2726bbb1ac120d, type: 3}
   m_Name: SPLSettings
   m_EditorClassIdentifier: 
-  NeedOpenSceneOnStart: 1
+  NeedOpenSceneOnStart: 0
   StartScene:
     Name: BootstrapScene
     Index: 0
     Path: Assets/Scenes/BootstrapScene.unity
     GuidHex: e0ad4066d1897ab4f9aec25dbbaf12f3
-  NeedOpenSceneOnStop: 1
+  NeedOpenSceneOnStop: 0
   StopScene:
     Name: GameScene
     Index: 1
