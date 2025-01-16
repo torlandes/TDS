@@ -1,26 +1,27 @@
-﻿using TDS.Infrastructure.Locator;
-using TDS.Service.Coroutine;
+﻿using TDS.Service.Coroutine;
+using TDS.Service.Mission;
 using TDS.Service.SceneLoading;
 using TDS.Utils.Log;
-using UnityEngine.SceneManagement;
 
 namespace TDS.Infrastructure.State
 {
     public class BootstrapState : AppState
     {
+        #region Public methods
+
         public override void Enter()
         {
             this.Log();
-            
+
             ServicesLocator.Register(new SceneLoaderService());
+            ServicesLocator.RegisterMono<MissionService>();
             ServicesLocator.RegisterMono<CoroutineRunner>();
-            
+
             StateMachine.Enter<LoadGameState>();
         }
 
-        public override void Exit()
-        {
-            
-        }
+        public override void Exit() { }
+
+        #endregion
     }
 }
