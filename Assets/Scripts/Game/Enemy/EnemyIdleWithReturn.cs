@@ -8,7 +8,7 @@ namespace TDS.Game.Enemy
         #region Variables
 
         [SerializeField] private EnemyMovement _movement;
-        [SerializeField] private float _stopDistance = 0.3f;
+        [SerializeField] private float _stopDistance;
 
         private Transform _startPoint;
 
