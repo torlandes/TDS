@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2652686362038793590}
   - component: {fileID: 7904711982258632077}
   - component: {fileID: 2258598374494011929}
-  - component: {fileID: 6462240322888028561}
+  - component: {fileID: 1474166805413991529}
   m_Layer: 6
   m_Name: PlayerGirl
   m_TagString: Player
@@ -161,7 +161,7 @@ CircleCollider2D:
   m_Offset: {x: 0.03586787, y: -0.1838662}
   serializedVersion: 2
   m_Radius: 0.75294584
---- !u!114 &6462240322888028561
+--- !u!114 &1474166805413991529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
