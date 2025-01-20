@@ -22,6 +22,7 @@ namespace TDS.Game.Common
         #region Properties
 
         public int Current => _current;
+        public int Max => _max;
 
         #endregion
 
@@ -34,12 +35,16 @@ namespace TDS.Game.Common
 
         #endregion
 
-        #region Public methods
+        #region IDamageable
 
         public void ApplyDamage(int damage)
         {
             Change(-damage);
         }
+
+        #endregion
+
+        #region Public methods
 
         public void Change(int value)
         {
