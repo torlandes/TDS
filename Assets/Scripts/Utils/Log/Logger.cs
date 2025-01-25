@@ -27,9 +27,9 @@ namespace TDS.Utils.Log
 
         private static string FormatMessage(Type type, string memberName, object message)
         {
-            string prefix = !Application.isEditor
+            string prefix = Application.isEditor
                 ? $"[{Time.frameCount}]"
-                : $"[{DateTime.Now.ToString("HH:mm:ss")}:{Time.frameCount}]";
+                : $"[{DateTime.Now.ToString("HH:mm:ss")} : {Time.frameCount}]";
             return $"{prefix} [{type.Name} : {memberName}] {message}";
         }
 

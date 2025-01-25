@@ -4771,7 +4771,7 @@ Tilemap:
       - {fileID: -1461743095, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: 217437376, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: -2078324946, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
-      m_AnimationSpeed: 4.006469
+      m_AnimationSpeed: 4.8166747
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -16, y: 6, z: 0}
@@ -4781,7 +4781,7 @@ Tilemap:
       - {fileID: -1461743095, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: 217437376, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: -2078324946, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
-      m_AnimationSpeed: 4.620679
+      m_AnimationSpeed: 4.8750463
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -15, y: 6, z: 0}
@@ -4791,7 +4791,7 @@ Tilemap:
       - {fileID: -1461743095, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: 217437376, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: -2078324946, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
-      m_AnimationSpeed: 4.6032696
+      m_AnimationSpeed: 4.0499973
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -14, y: 6, z: 0}
@@ -4801,7 +4801,7 @@ Tilemap:
       - {fileID: -1461743095, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: 217437376, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
       - {fileID: -2078324946, guid: ba539bdb88b45da4cbc718dbf851a8e8, type: 3}
-      m_AnimationSpeed: 4.7530966
+      m_AnimationSpeed: 4.716042
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -5047,8 +5047,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633110903}
-  - component: {fileID: 633110905}
   - component: {fileID: 633110904}
+  - component: {fileID: 633110905}
+  - component: {fileID: 633110906}
+  - component: {fileID: 633110907}
   m_Layer: 0
   m_Name: Mission Conditiontion Holder
   m_TagString: Untagged
@@ -5083,7 +5085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a028e8c8cb01409290937a5fc678a601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missionCondition: {fileID: 633110905}
+  _missionCondition: {fileID: 633110907}
 --- !u!114 &633110905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,6 +5099,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _observer: {fileID: 2037102691}
+--- !u!114 &633110906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633110902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1041b8584d214f4ab1215f7c55885cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyDeath: {fileID: 784721964}
+--- !u!114 &633110907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633110902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e121f362a36f48dea4206f4795d75861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _conditions:
+  - {fileID: 633110905}
+  - {fileID: 633110906}
 --- !u!1 &715976318
 GameObject:
   m_ObjectHideFlags: 0
