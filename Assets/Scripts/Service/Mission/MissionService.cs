@@ -1,7 +1,7 @@
 ﻿using System;
 using TDS.Infrastructure.Locator;
-using TDS.Utils.Log;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace TDS.Service.Mission
 {
@@ -9,12 +9,16 @@ namespace TDS.Service.Mission
     {
         #region Variables
 
-        private Mission _currentMission;
-
         private readonly MissionFactory _factory = new();
 
-        private event Action OnStarted;
-        private event Action OnCompleted;
+        private Mission _currentMission;
+
+        #endregion
+
+        #region Events
+
+        public event Action OnCompleted;
+        public event Action OnStarted;
 
         #endregion
 
@@ -28,6 +32,13 @@ namespace TDS.Service.Mission
         #endregion
 
         #region Public methods
+
+        public void Begin()
+        {
+            Assert.IsNotNull(_currentMission);
+            _currentMission.Begin();
+            OnStarted?.Invoke();
+        }
 
         public void Dispose()
         {
@@ -43,9 +54,8 @@ namespace TDS.Service.Mission
         public void Initialize()
         {
             MissionConditionHolder holder = FindObjectOfType<MissionConditionHolder>();
+            _currentMission = _factory.Create(holder.MissionCondition);
             _currentMission.OnCompleted += MissionCompletedCallback;
-            _currentMission.Begin();
-            OnStarted?.Invoke();
         }
 
         #endregion
@@ -54,7 +64,6 @@ namespace TDS.Service.Mission
 
         private void MissionCompletedCallback()
         {
-            this.Error();
             OnCompleted?.Invoke();
         }
 

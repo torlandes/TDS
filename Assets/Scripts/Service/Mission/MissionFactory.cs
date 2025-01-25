@@ -7,6 +7,7 @@ namespace TDS.Service.Mission
     {
         public Mission Create(MissionCondition condition)
         {
+            //TODO:
             if (condition is ReachExitPointMissionCondition reachExitPointMissionCondition)
             {
                 ReachExitPointMission reachExitPointMission = new();
@@ -20,6 +21,15 @@ namespace TDS.Service.Mission
                 killEnemyMission.SetCondition(killEnemyMissionCondition);
                 return killEnemyMission;
             }
+            
+            if (condition is OrCompositeMissionCondition orCompositeMissionCondition)
+            {
+                OrCompositeMission orCompositeMission = new();
+                orCompositeMission.SetCondition(orCompositeMissionCondition);
+                orCompositeMission.Setup(this);
+                return orCompositeMission;
+            }
+
             
             return null;
         }
