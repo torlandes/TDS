@@ -15,6 +15,7 @@ namespace TDS.Infrastructure.State
         {
             this.Log();
             ServicesLocator.Get<MissionService>().Initialize();
+            ServicesLocator.Get<MissionService>().Begin();
             
             GameScreen gameScreen = Object.FindObjectOfType<GameScreen>();
             PlayerMovement playerMovement = Object.FindObjectOfType<PlayerMovement>();
