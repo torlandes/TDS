@@ -1,3 +1,4 @@
+using TDS.Service.Input;
 using UnityEngine;
 
 namespace TDS.Game
@@ -14,6 +15,7 @@ namespace TDS.Game
         [SerializeField] private float _speed = 10;
 
         private Camera _camera;
+        private IInputService _inputService;
 
         #endregion
 
@@ -32,24 +34,36 @@ namespace TDS.Game
 
         #endregion
 
+        #region Public methods
+
+        public void Construct(IInputService inputService)
+        {
+            _inputService = inputService;
+        }
+
+        #endregion
+
         #region Private methods
 
         private void Move()
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            Vector2 direction = new(horizontal, vertical);
-            Vector2 velocity = direction.normalized * _speed;
+            // float horizontal = Input.GetAxis("Horizontal");
+            // float vertical = Input.GetAxis("Vertical");
+            // Vector2 direction = new(horizontal, vertical);
+
+            Vector2 velocity = _inputService.MoveDirection * _speed;
             _rb.velocity = velocity;
-            _animation.SetMovement(direction.magnitude);
+            _animation.SetMovement(velocity.magnitude);
         }
 
         private void Rotate()
         {
-            Vector3 mousePosition = Input.mousePosition;
-            Vector3 mouseWorldPoint = _camera.ScreenToWorldPoint(mousePosition);
-            mouseWorldPoint.z = transform.position.z;
-            transform.up = mouseWorldPoint - transform.position;
+            // Vector3 mousePosition = Input.mousePosition;
+            // Vector3 mouseWorldPoint = _camera.ScreenToWorldPoint(mousePosition);
+            // mouseWorldPoint.z = transform.position.z;
+            // transform.up = mouseWorldPoint - transform.position;
+
+            transform.up = _inputService.LookDirection;
         }
 
         #endregion
