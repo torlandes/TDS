@@ -12,10 +12,7 @@ namespace TDS.Service.SceneLoading
             SceneManager.LoadScene(sceneName);
         }
 
-        public void LoadAsync(string sceneName)
-        {
-            
-        }
+        public void LoadAsync(string sceneName) { }
 
         #endregion
     }

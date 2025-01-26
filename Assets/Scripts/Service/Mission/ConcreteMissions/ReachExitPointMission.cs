@@ -11,20 +11,22 @@ namespace TDS.Service.Mission.ConcreteMissions
         protected override void OnBegin()
         {
             base.OnBegin();
-            Condition.Observer.OnEntered += ObserverEnteredCallBack;
+
+            Condition.Observer.OnEntered += ObserverEnteredCallback;
         }
 
         protected override void OnStop()
         {
             base.OnStop();
-            Condition.Observer.OnEntered -= ObserverEnteredCallBack;
+
+            Condition.Observer.OnEntered -= ObserverEnteredCallback;
         }
 
         #endregion
 
         #region Private methods
 
-        private void ObserverEnteredCallBack(Collider2D col)
+        private void ObserverEnteredCallback(Collider2D col)
         {
             if (col.CompareTag(Tag.Player))
             {
